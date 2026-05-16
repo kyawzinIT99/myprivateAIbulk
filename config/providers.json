@@ -1,0 +1,353 @@
+{
+  "providers": {
+    "groq": {
+      "name": "Groq",
+      "baseUrl": "https://api.groq.com/openai/v1",
+      "apiKeyEnv": "GROQ_API_KEY",
+      "cost": "free",
+      "priority": 1,
+      "strengths": [
+        "speed",
+        "automation",
+        "real_time"
+      ],
+      "rateLimit": {
+        "rpm": 30,
+        "rpd": 14400,
+        "tpm": 6000
+      },
+      "models": {
+        "fast": {
+          "id": "llama-3.1-8b-instant",
+          "rpd": 14400,
+          "tpm": 6000
+        },
+        "balanced": {
+          "id": "llama-3.3-70b-versatile",
+          "rpd": 1000,
+          "tpm": 12000
+        },
+        "smart": {
+          "id": "llama-4-scout-17b-16e-instruct",
+          "rpd": 1000,
+          "tpm": 30000
+        },
+        "reasoning": {
+          "id": "qwen/qwen3-32b",
+          "rpd": 1000,
+          "tpm": 6000
+        }
+      }
+    },
+    "gemini": {
+      "name": "Google AI Studio",
+      "baseUrl": "https://generativelanguage.googleapis.com/v1beta",
+      "apiKeyEnv": "GEMINI_API_KEY",
+      "cost": "free",
+      "priority": 2,
+      "strengths": [
+        "long_context",
+        "analysis",
+        "research",
+        "reasoning"
+      ],
+      "models": {
+        "fast": {
+          "id": "gemini-2.5-flash-lite",
+          "rpd": 20,
+          "rpm": 10,
+          "tpm": 250000
+        },
+        "smart": {
+          "id": "gemini-2.5-flash",
+          "rpd": 20,
+          "rpm": 5,
+          "tpm": 250000
+        },
+        "large": {
+          "id": "gemma-3-27b-it",
+          "rpd": 14400,
+          "rpm": 30,
+          "tpm": 15000
+        }
+      }
+    },
+    "openrouter": {
+      "name": "OpenRouter",
+      "baseUrl": "https://openrouter.ai/api/v1",
+      "apiKeyEnv": "OPENROUTER_API_KEY",
+      "cost": "free",
+      "priority": 3,
+      "strengths": [
+        "general",
+        "fallback",
+        "variety"
+      ],
+      "rateLimit": {
+        "rpm": 20,
+        "rpd": 50
+      },
+      "models": {
+        "fast": {
+          "id": "deepseek/deepseek-v4-flash:free"
+        },
+        "balanced": {
+          "id": "minimax/minimax-m2.5:free"
+        },
+        "coding": {
+          "id": "deepseek/deepseek-v4-flash:free"
+        },
+        "reasoning": {
+          "id": "nvidia/nemotron-3-super-120b-a12b:free"
+        },
+        "general": {
+          "id": "minimax/minimax-m2.5:free"
+        },
+        "large": {
+          "id": "nvidia/nemotron-3-super-120b-a12b:free"
+        }
+      }
+    },
+    "github": {
+      "name": "GitHub Models",
+      "baseUrl": "https://models.inference.ai.azure.com",
+      "apiKeyEnv": "GITHUB_TOKEN",
+      "cost": "free",
+      "priority": 4,
+      "strengths": [
+        "coding",
+        "reasoning",
+        "gpt4"
+      ],
+      "models": {
+        "fast": {
+          "id": "gpt-4o-mini"
+        },
+        "smart": {
+          "id": "gpt-4o"
+        },
+        "reasoning": {
+          "id": "o3-mini"
+        },
+        "coding": {
+          "id": "DeepSeek-R1"
+        },
+        "premium": {
+          "id": "gpt-5"
+        },
+        "vision": {
+          "id": "Llama-3.2-90B-Vision-Instruct"
+        }
+      }
+    },
+    "cloudflare": {
+      "name": "Cloudflare Workers AI",
+      "baseUrl": "https://api.cloudflare.com/client/v4/accounts/{ACCOUNT_ID}/ai/run",
+      "apiKeyEnv": "CLOUDFLARE_API_KEY",
+      "accountIdEnv": "CLOUDFLARE_ACCOUNT_ID",
+      "cost": "free",
+      "priority": 5,
+      "strengths": [
+        "edge",
+        "fast",
+        "automation"
+      ],
+      "rateLimit": {
+        "neurons_per_day": 10000
+      },
+      "models": {
+        "fast": {
+          "id": "@cf/openai/gpt-oss-20b"
+        },
+        "smart": {
+          "id": "@cf/openai/gpt-oss-120b"
+        },
+        "coding": {
+          "id": "@cf/qwen/qwen3-30b-a3b-fp8"
+        },
+        "vision": {
+          "id": "@cf/nvidia/nemotron-3-120b-a12b"
+        }
+      }
+    },
+    "cerebras": {
+      "name": "Cerebras",
+      "baseUrl": "https://api.cerebras.ai/v1",
+      "apiKeyEnv": "CEREBRAS_API_KEY",
+      "cost": "free",
+      "priority": 6,
+      "strengths": [
+        "speed",
+        "large_model"
+      ],
+      "rateLimit": {
+        "rpm": 30,
+        "rpd": 14400,
+        "tpm": 60000
+      },
+      "models": {
+        "fast": {
+          "id": "llama3.1-8b"
+        },
+        "large": {
+          "id": "gpt-oss-120b"
+        }
+      }
+    },
+    "cohere": {
+      "name": "Cohere",
+      "baseUrl": "https://api.cohere.ai/v2",
+      "apiKeyEnv": "COHERE_API_KEY",
+      "cost": "free",
+      "priority": 7,
+      "strengths": [
+        "rag",
+        "search",
+        "retrieval"
+      ],
+      "rateLimit": {
+        "rpm": 20,
+        "rpm_month": 1000
+      },
+      "models": {
+        "default": {
+          "id": "command-a-03-2025"
+        },
+        "fast": {
+          "id": "command-r7b-12-2024"
+        },
+        "rag": {
+          "id": "command-r-plus-08-2024"
+        }
+      }
+    },
+    "mistral": {
+      "name": "Mistral",
+      "baseUrl": "https://api.mistral.ai/v1",
+      "apiKeyEnv": "MISTRAL_API_KEY",
+      "cost": "free",
+      "priority": 8,
+      "strengths": [
+        "coding",
+        "multilingual"
+      ],
+      "rateLimit": {
+        "rps": 1,
+        "tpm": 500000
+      },
+      "models": {
+        "fast": {
+          "id": "mistral-small-latest"
+        },
+        "coding": {
+          "id": "codestral-latest"
+        },
+        "smart": {
+          "id": "mistral-large-latest"
+        }
+      }
+    },
+    "sambanova": {
+      "name": "SambaNova Cloud",
+      "baseUrl": "https://api.sambanova.ai/v1",
+      "apiKeyEnv": "SAMBANOVA_API_KEY",
+      "cost": "trial",
+      "credits": 5,
+      "priority": 9,
+      "strengths": [
+        "large_model",
+        "reasoning"
+      ],
+      "models": {
+        "fast": {
+          "id": "Meta-Llama-3.3-70B-Instruct"
+        },
+        "reasoning": {
+          "id": "DeepSeek-V3-0324"
+        },
+        "large": {
+          "id": "Llama-4-Maverick-17B-128E-Instruct"
+        }
+      }
+    },
+    "nvidia": {
+      "name": "NVIDIA NIM",
+      "baseUrl": "https://integrate.api.nvidia.com/v1",
+      "apiKeyEnv": "NVIDIA_API_KEY",
+      "cost": "free",
+      "priority": 10,
+      "strengths": [
+        "variety",
+        "vision"
+      ],
+      "rateLimit": {
+        "rpm": 40
+      },
+      "models": {
+        "fast": {
+          "id": "meta/llama-3.3-70b-instruct"
+        },
+        "reasoning": {
+          "id": "nvidia/llama-3.3-nemotron-super-49b-v1"
+        }
+      }
+    }
+  },
+  "taskRouting": {
+    "fast_automation": [
+      "groq.fast",
+      "cerebras.fast",
+      "mistral.fast"
+    ],
+    "long_context": [
+      "gemini.smart",
+      "gemini.large",
+      "openrouter.large"
+    ],
+    "coding": [
+      "github.coding",
+      "openrouter.coding",
+      "groq.reasoning"
+    ],
+    "rag": [
+      "gemini.smart",
+      "openrouter.reasoning",
+      "github.smart"
+    ],
+    "reasoning": [
+      "github.reasoning",
+      "openrouter.reasoning",
+      "groq.reasoning"
+    ],
+    "content": [
+      "openrouter.general",
+      "groq.balanced",
+      "gemini.smart"
+    ],
+    "hr": [
+      "gemini.smart",
+      "github.smart",
+      "openrouter.reasoning"
+    ],
+    "lead_gen": [
+      "groq.fast",
+      "openrouter.fast",
+      "gemini.fast"
+    ],
+    "support": [
+      "groq.fast",
+      "cerebras.fast",
+      "openrouter.fast"
+    ],
+    "vision": [
+      "github.vision",
+      "nvidia.fast",
+      "gemini.smart"
+    ],
+    "premium_writing": [
+      "github.premium",
+      "github.smart",
+      "openrouter.reasoning"
+    ]
+  }
+}

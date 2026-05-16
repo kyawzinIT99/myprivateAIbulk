@@ -1,0 +1,22 @@
+{
+  "name": "antigravity-ai",
+  "version": "1.0.0",
+  "description": "Antigravity Multi-Model Dynamic AI Orchestrator",
+  "main": "main.js",
+  "scripts": {
+    "start": "node main.js run",
+    "test": "node main.js test",
+    "dashboard": "node main.js dashboard",
+    "dev": "node --watch main.js test",
+    "server": "node integrations/n8n/server.js"
+  },
+  "dependencies": {
+    "dotenv": "^16.4.5"
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  },
+  "bin": {
+    "ai": "./integrations/ide/cli.js"
+  }
+}
